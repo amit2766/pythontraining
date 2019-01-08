@@ -1,0 +1,52 @@
+Python datatypes
+
+Atomic
+bool(i)
+int (i)
+float(i)
+
+aggregate noncontainer
+str(i)
+
+sequential container
+list (m)
+tuple (i)
+
+associate container
+dict (m)
+neither seq nor associate
+set (m)
+
+(i) = immutable
+(m) = mutable
+
+------------------
+Python process RHS(right hand side) and creates an object. It infers type of object.
+Hence, python is inferred type language.
+Type belongs to object only. Not variable name.
+
+Python stores  4 information inside object:
+1. Object's value
+2. Type
+3. Memory address
+4. Reference count: How many references are associated with same object.
+
+
+ManagedAttribute
+Data Class
+
+Python internally maintains a symbol table
+del(var_name) : removes variable from scope and decrease reference count by 1
+
+if we reassign a variable then old ref count decrease by one and new increase by 1.
+There is no typecasting in python. As variable names do not have type
+Python integrates with c just like JNI(java native interface).
+
+Python paradigm
+1 Procedures
+2 Object based
+3 Object oriented
+4 Type
+5 Functional programming
+6 Meta programming
+7.
