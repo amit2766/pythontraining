@@ -1,0 +1,14 @@
+globals() shows a list of symbol tables
+Scopes in python
+1 Local: with respect to a function or class
+2 Enclosing: f2 is innner for f1 then all local of f1 are enclosing to f2
+3 Global: indentation 0 is global
+4 Builtin: print , type, id, set etc all are in builtin scope. We cannot create any line with this scope.
+
+importing modules
+  from math import sin is equal to
+  import math
+  sin = math.sin
+  del(math)
+
+Lazy evaluation and greedy evaluation
