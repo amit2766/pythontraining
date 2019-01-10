@@ -1,0 +1,17 @@
+Valid Name : 
+[1] Starts with alphabet (lower case or upper case) and is followed by 
+alphabets, digits or underscores. 
+
+Naming conventions : 
+[1] Names beginning with single underscore e.g. _var, are not imported 
+by a 'from module_name import *' statement. 
+[2] Names beginning and ending with double underscore, __X__ are system 
+defined names, that have special meaning to interpreter. 
+[3] Names that begin with two underscores but do not end with two 
+underscores are localized mangled names for the classes. 
+[4] Name which is just a single underscore _ retains the result of 
+last expression while working interactively. 
+
+General format of print statement 
+
+print ([objects, ...][, sep=' '][, end='\n'][, file=sys.stdout])

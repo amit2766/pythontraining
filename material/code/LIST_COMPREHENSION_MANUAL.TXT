@@ -1,0 +1,94 @@
+"""
+SYNTAX I : [<v> for <v> in <it>]
+
+# -----------------------------------------------------------------------------------
+
+SYNTAX II : [f(<v>) for <v> in <it>]
+
+# -----------------------------------------------------------------------------------
+
+SYNTAX III : [<v> for <v> in <it> if COND(<v>)]
+Step 1 : Split <it> into it's constituent elements
+Step 2 : Subject each constituent element to COND
+Step 3 : Select only those elements which yield result TRUE.
+Step 4 : Form list out of it
+
+# -----------------------------------------------------------------------------------
+
+SYNTAX IV : [f(<v>) for <v> in <it> if COND(<v>)]
+Step 1 : Split <it> into it's constituent elements
+Step 2 : Subject each constituent element to COND
+Step 3 : Select only those elements which yield result TRUE.
+Step 4 : Apply f on all elements which passed filter test in Step 3.
+
+# -----------------------------------------------------------------------------------
+
+SYNTAX V : [(x1, x2, ..., xn) for x1 in it1
+                              for x2 in it2
+                              .
+                              .
+                              .
+                              for xn in itn]
+Step1 : Split it1, it2, ... itn into their constituent elements
+Step2 : Take cartesian product of sets formed out of those constituent elements
+Step3 : Resultant list is a collection of all tuples formed out of cartesian product
+
+#------------------------------------------------------------------------------------
+
+SYNTAX VI : [(x1, x2, ..., xn) for x1 in it1 if COND1(x1)
+                               for x2 in it2 if COND2(x2)
+                               .
+                               .
+                               .
+                               for xn in itn if CONDn(xn)]
+Step1 : Split it1, it2, ... itn into their constituent elements
+Step2 : Apply filter, if any, to iterable and select only those elements from iterables
+which satisfy filter condition.
+Step3 : Take cartesian product of sets formed out of filtered iterables as filtered in step2
+Step4 : Resultant list is a collection of all tuples formed out of cartesian product
+
+#-----------------------------------------------------------------------------------------
+SYNTAX VII : [(f1(x1), f2(x2), ..., fn(xn)) for x1 in it1 if COND1(x1)
+                                           for x2 in it2 if COND2(x2)
+                                           for x3 in it3 if COND3(x3)
+                                           .
+                                           .
+                                           .
+                                           for xn in itn if CONDn(xn)]
+Step1 : Split it1, it2, ... itn into their constituent elements
+Step2 : Apply filter, if any, to iterable and select only those elements from iterables
+which satisfy filter condition.
+Step3 : Apply f1 on filtered elements in it1, f2 on filtered elements in it2 and so forth.
+Step4 : Take cartesian product of results obtainted in Step3
+Step5 : Resultant list is a collection of all tuples formed out of cartesian product.
+#------------------------------------------------------------------------------------------
+SYNTAX VIII : [g(f1(x1), f2(x2), ..., fn(xn)) for x1 in it1 if COND1(x1)
+                                             for x2 in it2 if COND2(x2)
+                                             .
+                                             .
+                                             .
+                                             for xn in itn if CONDn(xn) ]
+                                             Step1 : Split it1, it2, ... itn into their constituent elements
+Step2 : Apply filter, if any, to iterable and select only those elements from iterables
+which satisfy filter condition.
+Step3 : Apply f1 on filtered elements in it1, f2 on filtered elements in it2 and so forth.
+Step4 : Take cartesian product of results obtainted in Step3
+Step5 : Apply function g on each tuple formed in Step4. REMEMBER THAT EVERY TUPLE OBTAINED
+in STEP 4 will have one dimension related to one function. Element at index 0 is
+corrossponding to f1, element at index 1 is corrosponding to f2 and so forth and g is
+expressed in terms of f1(x1), f2(x2) ... to fn(xn). Apply the formula to each component
+of a tuple. Form a result. Discard tuple. Resultant list is a list of result when g
+is applied on each tiple formed in step 4.
+-------------------------------------------------------------------------------------------
+STEP IX: [g(f1(x1), f2(x2), ..., fn(xn) for  x1 in it1 if COND1(x1)
+                                             for x2 in it2 if COND2(x2)
+                                             .
+                                             .
+                                             .
+                                             for xn in itn if CONDn(xn)
+                                             if MASTERCOND(g(f1(x1), f2(x2), ..., fn(xn)))] 
+
+
+
+                                           
+

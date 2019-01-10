@@ -1,0 +1,13 @@
+1. The expression is evaluated, resulting in an object known as a context manager that
+must have __enter__ and __exit__ methods.
+
+2. The context manager’s __enter__ method is called. The value it returns is assigned
+to the variable in the as clause if present, or simply discarded otherwise.
+
+3. The code in the nested with block is executed.
+
+4. If the with block raises an exception, the __exit__(type, value, traceback) method
+is called with the exception details. 
+
+5. If the with block does not raise an exception, the __exit__ method is still called,
+but its type, value, and traceback arguments are all passed in as None.

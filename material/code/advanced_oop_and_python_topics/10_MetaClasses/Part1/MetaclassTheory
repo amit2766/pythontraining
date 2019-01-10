@@ -1,0 +1,51 @@
+Increasing Levels of “Magic”:- 
+-----------------------------------------------------------------------------------------------
+-Introspection attributes and tools
+Special attributes like __class__ and __dict__ allow us to inspect internal imple-
+mentation aspects of Python objects, in order to process them generically—to list
+all attributes of an object, display a class’s name, and so on. As we’ve also seen,
+tools such as dir and getattr can serve similar roles. 
+-----------------------------------------------------------------------------------------------
+-Operator overloading methods
+Specially named methods such as __str__ and __add__ coded in classes intercept
+and provide behavior for built-in operations applied to class instances, such as
+printing, expression operators, and so on. They are run automatically in response
+to built-in operations and allow classes to conform to expected interfaces.
+-----------------------------------------------------------------------------------------------
+- Attribute interception methods
+A special category of operator overloading methods provides a way to intercept
+attribute accesses on instances generically: __getattr__, __setattr__,
+__delattr__, and __getattribute__ allow wrapper (a.k.a. proxy) classes to insert
+automatically run code that may validate attribute requests and delegate them to
+embedded objects. They allow any number of attributes of an object to be com-
+puted when accessed—either selected attributes, or all of them.
+-----------------------------------------------------------------------------------------------
+- Class properties
+The property built-in allows us to associate code with a specific class attribute that
+is automatically run when the attribute is fetched, assigned, or deleted. Though
+not as generic as the prior paragraph’s tools, properties allow for automatic code
+invocation on access to specific attributes.
+-----------------------------------------------------------------------------------------------
+- Class attribute descriptors
+Really, property is a succinct way to define an attribute descriptor that runs func-
+tions on access automatically. Descriptors allow us to code in a separate class
+__get__, __set__, and __delete__ handler methods that are run automatically when
+an attribute assigned to an instance of that class is accessed. They provide a general
+way to insert arbitrary code that is run implicitly when a specific attribute is ac-
+cessed as part of the normal attribute lookup procedure.
+-----------------------------------------------------------------------------------------------
+- Function and class decorators
+The special @callable syntax for decorators allows us to add logic to be automatically 
+run when a function is called or a class instance is created. This wrapper logic can 
+trace or time calls, validate arguments, manage all instances of a class, augment 
+instances with extra behavior such as attribute fetch validation, and more. Decorator 
+syntax inserts name-rebinding logic to be run at the end of function and class definition statements—decorated function and class names may be rebound to either augmented original 
+objects, or to object proxies that intercept later calls.
+-----------------------------------------------------------------------------------------------
+-Although class decorators are often used to manage instances, they can also be used
+to manage classes instead, much like metaclasses.
+
+-Similarly, while metaclasses are designed to augment class construction, they can
+also insert proxies to manage instances instead, much like class decorators.
+-----------------------------------------------------------------------------------------------
+
