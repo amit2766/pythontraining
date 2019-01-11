@@ -1,0 +1,18 @@
+Book : Introduction to functional programming: Richard Bird and P
+Haskell: language for higher order concepts in functional programming
+
+
+t=T()
+inside story
+1 Invoke type.__call__
+2 A: type.__new__
+      > output of above is:
+        create EmptyObject of type T (meaning empty namespace)
+      > is __init__ present in class?
+      No: object.__init__ is invoked(parent class) return
+      Yes: constructor of defined class is invoked
+3. Control again returns to __call__ but this time it has object of class T. This object is returned.
+
+
+
+There is no function overloading in python. Hence there can be only one constructor
